@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LokaMart Nusantara</string>
+    <string name="campus_identity">RPL (Rekayasa Perangkat Lunak) • STMIK IKMI CIREBON</string>
+    <string name="firebase_project_id">southern-flash-kcf5x</string>
+    <string name="firestore_db_id">ai-studio-remixlokamartmar-f39c52e0-d478-4ce3-969a-f0922317bfb7</string>
+</resources>

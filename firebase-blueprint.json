@@ -1,0 +1,504 @@
+{
+  "entities": {
+    "UserProfileDoc": {
+      "title": "UserProfileDoc",
+      "description": "Data profil utama pengguna dan mahasiswa RPL STMIK IKMI Cirebon di LokaMart.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "UID Firebase Auth pemilik profil.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Nama lengkap pengguna.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Alamat email pengguna.",
+          "minLength": 3,
+          "maxLength": 120
+        },
+        "phone": {
+          "type": "string",
+          "description": "Nomor telepon atau WhatsApp.",
+          "minLength": 5,
+          "maxLength": 30
+        },
+        "nim": {
+          "type": "string",
+          "description": "Nomor Induk Mahasiswa (NIM).",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "prodi": {
+          "type": "string",
+          "description": "Program studi mahasiswa.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "campus": {
+          "type": "string",
+          "description": "Nama institusi kampus.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "memberLevel": {
+          "type": "string",
+          "description": "Tingkat keanggotaan LokaMart.",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Waktu pembuatan dokumen."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Waktu pembaruan dokumen."
+        }
+      },
+      "required": [
+        "ownerId",
+        "name",
+        "email",
+        "phone",
+        "nim",
+        "prodi",
+        "campus",
+        "memberLevel",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "RegisteredAccountDoc": {
+      "title": "RegisteredAccountDoc",
+      "description": "Data akun terdaftar pada simulasi autentikasi LokaMart Android.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "UID pemilik sesi.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 120
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 30
+        },
+        "nim": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "prodi": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "campus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "memberLevel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "passwordHash": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "name",
+        "email",
+        "phone",
+        "nim",
+        "prodi",
+        "campus",
+        "memberLevel",
+        "passwordHash",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "CartItemDoc": {
+      "title": "CartItemDoc",
+      "description": "Item keranjang belanja pengguna di Cloud Firestore.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "productId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "storeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "storeName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "storeOrigin": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "variant": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "price": {
+          "type": "number"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "checked": {
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "productId",
+        "storeId",
+        "storeName",
+        "storeOrigin",
+        "title",
+        "variant",
+        "price",
+        "quantity",
+        "checked",
+        "badge",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AddressDoc": {
+      "title": "AddressDoc",
+      "description": "Alamat pengiriman pengguna di Cloud Firestore.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "recipient": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "phoneOrSub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "fullAddress": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 300
+        },
+        "shortLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "isMain": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "label",
+        "recipient",
+        "phoneOrSub",
+        "fullAddress",
+        "shortLabel",
+        "isMain",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "OrderDoc": {
+      "title": "OrderDoc",
+      "description": "Dokumen transaksi pesanan LokaMart di Cloud Firestore.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "orderNumber": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 60
+        },
+        "dateStr": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "timeStr": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Menunggu Pembayaran",
+            "Diproses",
+            "Dikirim",
+            "Selesai",
+            "Dibatalkan"
+          ],
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "storeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "storeName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "storeOrigin": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "subtotal": {
+          "type": "number"
+        },
+        "shippingFee": {
+          "type": "number"
+        },
+        "shippingDiscount": {
+          "type": "number"
+        },
+        "voucherDiscount": {
+          "type": "number"
+        },
+        "serviceFee": {
+          "type": "number"
+        },
+        "totalPayment": {
+          "type": "number"
+        },
+        "shippingService": {
+          "type": "string",
+          "enum": ["Reguler", "Express"],
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "courierName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "resiNumber": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "etaText": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "paymentMethod": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "vaNumber": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "addressShort": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "itemsSummary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "userRating": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "orderNumber",
+        "dateStr",
+        "timeStr",
+        "status",
+        "storeId",
+        "storeName",
+        "storeOrigin",
+        "subtotal",
+        "shippingFee",
+        "shippingDiscount",
+        "voucherDiscount",
+        "serviceFee",
+        "totalPayment",
+        "shippingService",
+        "courierName",
+        "resiNumber",
+        "etaText",
+        "paymentMethod",
+        "vaNumber",
+        "addressShort",
+        "itemsSummary",
+        "reviewed",
+        "userRating",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminDoc": {
+      "title": "AdminDoc",
+      "description": "Dokumen penanda hak akses administrator.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfileDoc" },
+      "description": "Dokumen profil utama pengguna dan mahasiswa RPL."
+    },
+    "/users/{userId}/accounts/{accountId}": {
+      "schema": { "$ref": "#/entities/RegisteredAccountDoc" },
+      "description": "Subkoleksi akun mahasiswa terdaftar milik pengguna."
+    },
+    "/users/{userId}/cart/{cartId}": {
+      "schema": { "$ref": "#/entities/CartItemDoc" },
+      "description": "Subkoleksi keranjang belanja pengguna."
+    },
+    "/users/{userId}/addresses/{addressId}": {
+      "schema": { "$ref": "#/entities/AddressDoc" },
+      "description": "Subkoleksi daftar alamat pengiriman pengguna."
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/OrderDoc" },
+      "description": "Subkoleksi riwayat dan pelacakan pesanan pengguna."
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "#/entities/AdminDoc" },
+      "description": "Koleksi khusus daftar administrator sistem."
+    }
+  }
+}

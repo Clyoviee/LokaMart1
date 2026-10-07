@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-error-container: #93000a;
+  --color-tertiary-fixed: #ffdbca;
+  --color-on-tertiary-fixed-variant: #783200;
+  --color-inverse-primary: #a8c8fc;
+  --color-tertiary-container: #652800;
+  --color-secondary-container: #90c9ff;
+  --color-on-background: #041b3c;
+  --color-primary: #00254b;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary-container: #ff8135;
+  --color-surface-bright: #f9f9ff;
+  --color-secondary-fixed-dim: #96ccff;
+  --color-on-secondary: #ffffff;
+  --color-surface-container: #e8edff;
+  --color-secondary-fixed: #cee5ff;
+  --color-on-secondary-container: #075584;
+  --color-surface-variant: #d7e2ff;
+  --color-on-primary-container: #86a6d8;
+  --color-surface-tint: #3f5f8d;
+  --color-outline: #737780;
+  --color-surface-container-highest: #d7e2ff;
+  --color-surface: #f9f9ff;
+  --color-on-primary-fixed: #001c3b;
+  --color-on-surface: #041b3c;
+  --color-error-container: #ffdad6;
+  --color-on-tertiary-fixed: #341100;
+  --color-on-error: #ffffff;
+  --color-secondary: #216393;
+  --color-surface-container-high: #e0e8ff;
+  --color-background: #f9f9ff;
+  --color-inverse-on-surface: #edf0ff;
+  --color-primary-fixed: #d5e3ff;
+  --color-inverse-surface: #1d3052;
+  --color-on-secondary-fixed: #001d32;
+  --color-outline-variant: #c3c6d0;
+  --color-on-primary-fixed-variant: #264774;
+  --color-on-secondary-fixed-variant: #004a76;
+  --color-surface-dim: #cadaff;
+  --color-surface-container-low: #f1f3ff;
+  --color-primary-container: #173b67;
+  --color-tertiary-fixed-dim: #ffb690;
+  --color-tertiary: #421800;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary-fixed-dim: #a8c8fc;
+  --color-on-surface-variant: #43474f;
+
+  --spacing-space-xl: 1.5rem;
+  --spacing-space-lg: 1rem;
+  --spacing-space-md: 0.75rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-margin: 1rem;
+  --spacing-gutter: 0.75rem;
+  --spacing-13: 3.25rem;
+  --spacing-18: 4.5rem;
+
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overscroll-behavior: none;
+  }
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom typography classes matching HTML design tokens */
+.font-headline-lg, .text-headline-lg {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+}
+.font-headline-md, .text-headline-md {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
+.font-headline-sm, .text-headline-sm {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.font-title-lg, .text-title-lg {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.font-title-md, .text-title-md {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.font-title-sm, .text-title-sm {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+.font-body-lg, .text-body-lg {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.font-body-md, .text-body-md {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.font-body-sm, .text-body-sm {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.font-label-lg, .text-label-lg {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+.font-label-md, .text-label-md {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.font-label-sm, .text-label-sm {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 700;
+}
+.font-currency-display, .text-currency-display {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.material-symbols-outlined {
+  user-select: none;
+}
+
